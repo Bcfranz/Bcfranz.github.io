@@ -1,0 +1,22 @@
+ start("Start Game")
+    input("Enter your guess")
+    check{"Is the guess correct?"}
+    higher("Guess is too high")
+    lower("Guess is too low")
+    correct("Correct guess! You've won!")
+    retry("Try again")
+    start --> input
+    input --> check
+    check -->|Yes| correct
+    check -->|No, too high| higher
+    check -->|No, too low| lower
+    higher --> retry
+    lower --> retry
+    retry --> input
+    style start fill:#1f77b4,stroke:#000,color:#fff
+    style input fill:#ff7f0e,stroke:#000,color:#fff
+    style check fill:#2ca02c,stroke:#000,color:#fff
+    style higher fill:#d62728,stroke:#000,color:#fff
+    style lower fill:#d62728,stroke:#000,color:#fff
+    style correct fill:#9467bd,stroke:#000,color:#fff
+    style retry fill:#8c564b,stroke:#000,color:#fff
